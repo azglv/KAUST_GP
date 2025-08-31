@@ -23,7 +23,7 @@
                     <a href="#about" class="nav-link">What is our project</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#try" class="nav-link">Try it now</a>
+                    <a href="#try" class="nav-link">Example</a>
                 </li>
                 <li class="nav-item">
                     <a href="#team" class="nav-link">Team</a>
@@ -118,38 +118,45 @@
         </div>
     </section>
 
-    <section id="try" class="try-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Try it now</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Upload your 2D image and watch it transform into a 3D model</p>
+     <!-- BEGIN: replaced Try Now with Examples section -->
+  <section id="try" class="examples-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Example: 2D → 3D Transformation</h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">See how our AI converts flat images into detailed 3D models</p>
+      </div>
+      <div class="examples-container">
+        <div class="example-pair">
+          <div class="image-container">
+            <div class="image-wrapper">
+              <img src="assets/image1.png" alt="Original 2D Image" class="example-image">
+              <div class="image-label">
+                <i class="fas fa-image"></i>
+                <span>Original 2D Images</span>
+              </div>
             </div>
-            <div class="upload-container">
-                <div class="upload-area" id="uploadArea">
-                    <div class="upload-content">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <h3>Drag and drop your image here</h3>
-                        <p>or click to browse files</p>
-                        <div class="file-types">
-                            <span>Supported formats: JPG, PNG, JPEG</span>
-                        </div>
-                    </div>
-                    <input type="file" id="fileInput" accept="image/*" hidden>
-                </div>
-                <div class="upload-buttons">
-                    <button class="btn-primary upload-btn" onclick="document.getElementById('fileInput').click()">
-                        <i class="fas fa-upload"></i>
-                        Choose File
-                    </button>
-                    <button class="btn-secondary process-btn" disabled>
-                        <i class="fas fa-magic"></i>
-                        Convert to 3D
-                    </button>
-                </div>
+          </div>
+
+          <div class="transformation-arrow" aria-hidden="true">
+            <i class="fas fa-arrow-right arrow-right"></i>
+            <i class="fas fa-arrow-down arrow-down"></i>
+          </div>
+
+          <div class="image-container">
+            <div class="image-wrapper">
+              <img src="assets/image2.png" alt="Generated 3D Model" class="example-image">
+              <div class="image-label">
+                <i class="fas fa-cube"></i>
+                <span>Generated 3D Model</span>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+    <!-- END: replaced Try Now with Examples section -->
 
     <section id="team" class="members-section">
         <div class="container">
@@ -304,47 +311,6 @@
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         }));
-
-        // File upload functionality
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-        const processBtn = document.querySelector('.process-btn');
-
-        uploadArea.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                handleFileSelection(files[0]);
-            }
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFileSelection(e.target.files[0]);
-            }
-        });
-
-        function handleFileSelection(file) {
-            if (file.type.startsWith('image/')) {
-                uploadArea.querySelector('h3').textContent = `Selected: ${file.name}`;
-                processBtn.disabled = false;
-                processBtn.classList.add('enabled');
-            }
-        }
 
         // Contact form submission
         document.querySelector('.contact-form').addEventListener('submit', (e) => {
