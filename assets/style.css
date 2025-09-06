@@ -269,7 +269,7 @@ body {
 
 /* Members Section */
 .members-section { padding: 5rem 0; color: white; background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); }
-.members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.members-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
 .member-card {
   background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
   border-radius: 20px; padding: 2rem; text-align: center;
@@ -353,7 +353,7 @@ body {
   .kaust-logos { flex-direction: column; gap: 2rem; margin: 3rem 0; }
   .kaust-logo { max-height: 100px; }
 
-  .members-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .members-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .member-card { padding: 1.5rem; }
 
   /* Examples: stack vertically */
