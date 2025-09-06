@@ -353,7 +353,7 @@ body {
   .kaust-logos { flex-direction: column; gap: 2rem; margin: 3rem 0; }
   .kaust-logo { max-height: 100px; }
 
-  .members-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .members-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .member-card { padding: 1.5rem; }
 
   /* Examples: stack vertically */
@@ -388,4 +388,5 @@ body {
   .examples-container { padding: 0 1rem; }
   .image-wrapper { padding: 1.5rem; max-width: 100%; }
   .transformation-arrow { font-size: 1.2rem; margin: 1rem 0; }
+  .members-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
